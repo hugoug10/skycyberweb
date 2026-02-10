@@ -89,20 +89,20 @@ const BusinessCard = () => {
                             {/* Services List */}
                             <div>
                                 <h4 className="text-[10px] text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                    <Cpu size={10} /> Capacidades del Sistema
+                                    <Rocket size={10} /> Lo Que Hacemos
                                 </h4>
                                 <ul className="space-y-2">
                                     <li className="flex items-center gap-2 text-sm text-gray-300">
                                         <span className="w-1.5 h-1.5 bg-neon-cyan rounded-full shadow-[0_0_5px_#00f3ff]"></span>
-                                        Desarrollo Web High-End
+                                        Páginas Web Modernas
                                     </li>
                                     <li className="flex items-center gap-2 text-sm text-gray-300">
                                         <span className="w-1.5 h-1.5 bg-neon-purple rounded-full shadow-[0_0_5px_#bd00ff]"></span>
-                                        Branding & Identidad Digital
+                                        Diseño de Logos y Marcas
                                     </li>
                                     <li className="flex items-center gap-2 text-sm text-gray-300">
                                         <span className="w-1.5 h-1.5 bg-orange-500 rounded-full shadow-[0_0_5px_orange]"></span>
-                                        <span className="font-bold text-white">Videografía Dron 4K</span>
+                                        <span className="font-bold text-white">Vídeos Aéreos con Dron</span>
                                     </li>
                                 </ul>
                             </div>
