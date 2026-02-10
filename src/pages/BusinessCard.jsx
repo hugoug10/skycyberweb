@@ -7,48 +7,51 @@ const BusinessCard = () => {
             <h1 className="text-3xl font-bold text-white mb-4">Diseño Premium CyberSkyWeb</h1>
 
             {/* FRONT SIDE */}
-            <div className="relative w-[500px] h-[300px] rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(0,243,255,0.15)] group transition-transform hover:scale-105 duration-500">
-                {/* Dark Base & Noise */}
-                <div className="absolute inset-0 bg-[#050505]"></div>
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
+            {/* FRONT SIDE */}
+            <div className="relative w-[500px] h-[300px] bg-white shadow-[0_0_80px_rgba(0,243,255,0.15)] group transition-transform hover:scale-105 duration-500 p-4 rounded-xl">
+                <div className="relative w-full h-full rounded-lg overflow-hidden">
+                    {/* Dark Base & Noise */}
+                    <div className="absolute inset-0 bg-[#050505]"></div>
+                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
 
-                {/* Cyber Grid Background */}
-                <div className="absolute inset-0 opacity-20"
-                    style={{ backgroundImage: 'linear-gradient(#00f3ff 1px, transparent 1px), linear-gradient(90deg, #00f3ff 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
-                </div>
+                    {/* Cyber Grid Background */}
+                    <div className="absolute inset-0 opacity-20"
+                        style={{ backgroundImage: 'linear-gradient(#00f3ff 1px, transparent 1px), linear-gradient(90deg, #00f3ff 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+                    </div>
 
-                {/* Glowing Orbs */}
-                <div className="absolute top-[-20%] right-[-20%] w-[300px] h-[300px] bg-neon-purple/40 rounded-full blur-[80px]"></div>
-                <div className="absolute bottom-[-20%] left-[-20%] w-[300px] h-[300px] bg-neon-cyan/30 rounded-full blur-[80px]"></div>
+                    {/* Glowing Orbs */}
+                    <div className="absolute top-[-20%] right-[-20%] w-[300px] h-[300px] bg-neon-purple/40 rounded-full blur-[80px]"></div>
+                    <div className="absolute bottom-[-20%] left-[-20%] w-[300px] h-[300px] bg-neon-cyan/30 rounded-full blur-[80px]"></div>
 
-                {/* Content Container */}
-                <div className="relative h-full flex flex-col items-center justify-center z-10 p-8 border-[10px] border-white/5 mx-4 my-4 rounded-xl">
-                    {/* Tech Decorators */}
-                    <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-neon-cyan"></div>
-                    <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-neon-purple"></div>
-                    <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-neon-purple"></div>
-                    <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-neon-cyan"></div>
+                    {/* Content Container */}
+                    <div className="relative h-full flex flex-col items-center justify-center z-10 p-8 border-[10px] border-white/5 rounded-xl">
+                        {/* Tech Decorators */}
+                        <div className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-neon-cyan"></div>
+                        <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-neon-purple"></div>
+                        <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-neon-purple"></div>
+                        <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-neon-cyan"></div>
 
-                    {/* Logo Area */}
-                    <div className="flex items-center justify-center mb-2 md:scale-150 transform transition-transform group-hover:scale-[1.6]">
-                        <div className="relative p-4">
-                            {/* Inner Glow */}
-                            <div className="absolute inset-0 bg-neon-cyan/20 blur-2xl rounded-full"></div>
-                            <img src="/favicon.svg" alt="CyberSkyWeb" className="w-24 h-24 relative z-10 drop-shadow-[0_0_15px_rgba(0,243,255,0.5)]" />
+                        {/* Logo Area */}
+                        <div className="flex items-center justify-center mb-2 md:scale-150 transform transition-transform group-hover:scale-[1.6]">
+                            <div className="relative p-4">
+                                {/* Inner Glow */}
+                                <div className="absolute inset-0 bg-neon-cyan/20 blur-2xl rounded-full"></div>
+                                <img src="/favicon.svg" alt="CyberSkyWeb" className="w-24 h-24 relative z-10 drop-shadow-[0_0_15px_rgba(0,243,255,0.5)]" />
+                            </div>
                         </div>
+
+                        <h2 className="text-4xl font-black italic tracking-tighter text-white mb-1 drop-shadow-lg">
+                            CYBER<span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">SKY</span>WEB
+                        </h2>
+
+                        <div className="flex items-center gap-3 w-full justify-center mb-4">
+                            <div className="h-[1px] w-12 bg-gradient-to-l from-neon-purple to-transparent"></div>
+                            <span className="text-xs font-mono text-neon-cyan tracking-[0.4em] uppercase">Future Digital Agency</span>
+                            <div className="h-[1px] w-12 bg-gradient-to-r from-neon-purple to-transparent"></div>
+                        </div>
+
+
                     </div>
-
-                    <h2 className="text-4xl font-black italic tracking-tighter text-white mb-1 drop-shadow-lg">
-                        CYBER<span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">SKY</span>WEB
-                    </h2>
-
-                    <div className="flex items-center gap-3 w-full justify-center mb-4">
-                        <div className="h-[1px] w-12 bg-gradient-to-l from-neon-purple to-transparent"></div>
-                        <span className="text-xs font-mono text-neon-cyan tracking-[0.4em] uppercase">Future Digital Agency</span>
-                        <div className="h-[1px] w-12 bg-gradient-to-r from-neon-purple to-transparent"></div>
-                    </div>
-
-
                 </div>
             </div>
 
