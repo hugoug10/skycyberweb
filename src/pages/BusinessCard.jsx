@@ -47,10 +47,7 @@ const BusinessCard = () => {
                         <div className="h-[1px] w-12 bg-gradient-to-r from-neon-purple to-transparent"></div>
                     </div>
 
-                    <div className="mt-4 px-6 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-2">
-                        <Globe size={14} className="text-neon-cyan" />
-                        <span className="text-sm font-bold text-gray-200 tracking-wide">cyberskyweb.com</span>
-                    </div>
+
                 </div>
             </div>
 
