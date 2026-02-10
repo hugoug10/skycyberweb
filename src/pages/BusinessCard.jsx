@@ -30,10 +30,11 @@ const BusinessCard = () => {
                     <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-neon-cyan"></div>
 
                     {/* Logo Area */}
-                    <div className="flex items-center gap-4 mb-2 md:scale-125 transform">
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-neon-cyan blur-md opacity-50"></div>
-                            <img src="/favicon.svg" alt="CyberSkyWeb" className="w-20 h-20 relative z-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
+                    <div className="flex items-center justify-center mb-2 md:scale-150 transform transition-transform group-hover:scale-[1.6]">
+                        <div className="relative p-4">
+                            {/* Inner Glow */}
+                            <div className="absolute inset-0 bg-neon-cyan/20 blur-2xl rounded-full"></div>
+                            <img src="/favicon.svg" alt="CyberSkyWeb" className="w-24 h-24 relative z-10 drop-shadow-[0_0_15px_rgba(0,243,255,0.5)]" />
                         </div>
                     </div>
 
