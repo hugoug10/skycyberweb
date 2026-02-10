@@ -38,7 +38,7 @@ const BusinessCard = () => {
                     </div>
 
                     <h2 className="text-4xl font-black italic tracking-tighter text-white mb-1 drop-shadow-lg">
-                        SKY<span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">CYBER</span>WEB
+                        CYBER<span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">SKY</span>WEB
                     </h2>
 
                     <div className="flex items-center gap-3 w-full justify-center mb-4">
