@@ -52,7 +52,7 @@ const Hero = () => {
                     {[
                         { icon: Globe, text: "Experiencias Inmersivas", color: "text-neon-cyan" },
                         { icon: Zap, text: "Ultra Rendimiento", color: "text-neon-purple" },
-                        { icon: Code, text: "Tecnología de Punta", color: "text-neon-blue" },
+                        { icon: Code, text: "Tecnología Punta", color: "text-neon-blue" },
                     ].map((item, index) => (
                         <motion.div
                             key={index}
