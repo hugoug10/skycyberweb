@@ -1,14 +1,36 @@
 import React from 'react';
-import { Rocket, Globe, Mail, Phone, MapPin, Video, Layout, Search, ShoppingCart, QrCode, Cpu, Wifi } from 'lucide-react';
+import { Rocket, Globe, Mail, Phone, MapPin, Video, Layout, Search, ShoppingCart, QrCode, Cpu, Wifi, Download } from 'lucide-react';
+import * as htmlToImage from 'html-to-image';
+import download from 'downloadjs';
 
 const BusinessCard = () => {
+    const downloadImage = (id, name) => {
+        const node = document.getElementById(id);
+        htmlToImage.toPng(node)
+            .then((dataUrl) => {
+                download(dataUrl, `${name}.png`);
+            })
+            .catch((error) => {
+                console.error('Error downloading image:', error);
+            });
+    };
+
     return (
-        <div className="min-h-screen bg-neutral-900 flex flex-col items-center justify-center p-8 gap-16 font-sans">
+        <div className="min-h-screen bg-neutral-900 flex flex-col items-center justify-center p-8 gap-8 font-sans">
             <h1 className="text-3xl font-bold text-white mb-4">Diseño Premium CyberSkyWeb</h1>
+
+            <div className="flex gap-4 mb-8">
+                <button onClick={() => downloadImage('card-front', 'tarjeta-frontal')} className="px-6 py-2 bg-neon-cyan text-black font-bold rounded-full hover:bg-white transition-colors flex items-center gap-2">
+                    <Download size={18} /> Descargar Frontal
+                </button>
+                <button onClick={() => downloadImage('card-back', 'tarjeta-trasera')} className="px-6 py-2 bg-neon-purple text-white font-bold rounded-full hover:bg-white hover:text-black transition-colors flex items-center gap-2">
+                    <Download size={18} /> Descargar Trasera
+                </button>
+            </div>
 
             {/* FRONT SIDE */}
             {/* FRONT SIDE */}
-            <div className="relative w-[500px] h-[300px] bg-white shadow-[0_0_80px_rgba(0,243,255,0.15)] group transition-transform hover:scale-105 duration-500 p-4 rounded-xl">
+            <div id="card-front" className="relative w-[500px] h-[300px] bg-white shadow-[0_0_80px_rgba(0,243,255,0.15)] group transition-transform hover:scale-105 duration-500 p-4 rounded-xl">
                 <div className="relative w-full h-full rounded-lg overflow-hidden">
                     {/* Dark Base & Noise */}
                     <div className="absolute inset-0 bg-[#050505]"></div>
@@ -56,7 +78,7 @@ const BusinessCard = () => {
             </div>
 
             {/* BACK SIDE */}
-            <div className="relative w-[500px] h-[300px] bg-white shadow-[0_0_80px_rgba(189,0,255,0.15)] group transition-transform hover:scale-105 duration-500 p-4 rounded-xl">
+            <div id="card-back" className="relative w-[500px] h-[300px] bg-white shadow-[0_0_80px_rgba(189,0,255,0.15)] group transition-transform hover:scale-105 duration-500 p-4 rounded-xl">
                 <div className="relative w-full h-full rounded-lg overflow-hidden">
                     {/* Background */}
                     <div className="absolute inset-0 bg-[#080808]"></div>
