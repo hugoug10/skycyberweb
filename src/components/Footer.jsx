@@ -11,7 +11,7 @@ const Footer = () => {
                         <div className="flex items-center gap-2 mb-4">
                             <img src="/favicon.svg" alt="CyberSkyWeb Logo" className="h-8 w-8" />
                             <span className="font-bold text-xl tracking-tighter text-white">
-                                SKY<span className="text-neon-cyan">CYBER</span>WEB
+                                CYBER<span className="text-neon-cyan">SKY</span>WEB
                             </span>
                         </div>
                         <p className="text-gray-400 text-sm leading-relaxed">
