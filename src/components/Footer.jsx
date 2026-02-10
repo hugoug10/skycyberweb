@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-2 mb-4">
-                            <img src="/favicon.svg" alt="CyberSkyWeb Logo" className="h-8 w-8" />
+                            <img src="/favicon.svg?v=3" alt="CyberSkyWeb Logo" className="h-8 w-8" />
                             <span className="font-bold text-xl tracking-tighter text-white">
                                 CYBER<span className="text-neon-cyan">SKY</span>WEB
                             </span>
