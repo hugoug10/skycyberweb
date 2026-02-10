@@ -19,12 +19,12 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
-                        <span className="w-2 h-2 rounded-full bg-neon-cyan animate-ping"></span>
-                        <span className="text-gray-300 text-sm font-medium tracking-wide">CYBERSKYWEB.COM</span>
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/5 border border-white/10 mb-6 md:mb-8 backdrop-blur-sm">
+                        <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-neon-cyan animate-ping"></span>
+                        <span className="text-gray-300 text-xs md:text-sm font-medium tracking-wide">CYBERSKYWEB.COM</span>
                     </div>
 
-                    <h1 className="text-4xl md:text-8xl font-black tracking-tighter text-white mb-6 leading-tight">
+                    <h1 className="text-4xl sm:text-5xl md:text-8xl font-black tracking-tighter text-white mb-6 leading-tight">
                         ELEVAMOS TU <br />
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan via-white to-neon-purple animate-gradient-x">
                             PRESENCIA DIGITAL
