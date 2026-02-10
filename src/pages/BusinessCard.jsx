@@ -49,7 +49,7 @@ const BusinessCard = () => {
 
                     <div className="mt-4 px-6 py-2 bg-white/5 backdrop-blur-md rounded-full border border-white/10 flex items-center gap-2">
                         <Globe size={14} className="text-neon-cyan" />
-                        <span className="text-sm font-bold text-gray-200 tracking-wide">skycyberweb.com</span>
+                        <span className="text-sm font-bold text-gray-200 tracking-wide">cyberskyweb.com</span>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@ const BusinessCard = () => {
                         <div className="aspect-square bg-white p-2 rounded-lg mb-2 relative overflow-hidden">
                             {/* Real QR */}
                             <img
-                                src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://skycyberweb.com"
+                                src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://cyberskyweb.com"
                                 alt="QR Code"
                                 className="w-full h-full object-contain"
                             />

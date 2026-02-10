@@ -21,7 +21,7 @@ const Hero = () => {
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
                         <span className="w-2 h-2 rounded-full bg-neon-cyan animate-ping"></span>
-                        <span className="text-gray-300 text-sm font-medium tracking-wide">SKYCYBERWEB.COM</span>
+                        <span className="text-gray-300 text-sm font-medium tracking-wide">CYBERSKYWEB.COM</span>
                     </div>
 
                     <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white mb-6 leading-tight">
