@@ -32,9 +32,9 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     <Link to="/" className="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                        <img src="/favicon.svg" alt="SkyCyberWeb Logo" className="h-10 w-10 hover:scale-110 transition-transform duration-300" />
+                        <img src="/favicon.svg" alt="CyberSkyWeb Logo" className="h-10 w-10 hover:scale-110 transition-transform duration-300" />
                         <span className="font-bold text-2xl tracking-tighter text-white">
-                            SKY<span className="text-neon-cyan">CYBER</span>WEB
+                            CYBER<span className="text-neon-cyan">SKY</span>WEB
                         </span>
                     </Link>
 

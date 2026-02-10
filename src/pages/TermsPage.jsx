@@ -11,7 +11,7 @@ const TermsPage = () => {
             <div className="space-y-6 text-gray-300">
                 <p>Última actualización: {new Date().toLocaleDateString()}</p>
                 <p>
-                    Bienvenido a SkyCyberWeb. Al acceder a nuestro sitio web, usted acepta estar sujeto a estos términos y condiciones.
+                    Bienvenido a CyberSkyWeb. Al acceder a nuestro sitio web, usted acepta estar sujeto a estos términos y condiciones.
                 </p>
                 <h2 className="text-2xl font-bold text-white mt-8 mb-4">1. Uso del Sitio</h2>
                 <p>
@@ -19,11 +19,11 @@ const TermsPage = () => {
                 </p>
                 <h2 className="text-2xl font-bold text-white mt-8 mb-4">2. Propiedad Intelectual</h2>
                 <p>
-                    Todo el contenido de este sitio web, incluyendo texto, gráficos, logotipos e imágenes, es propiedad de SkyCyberWeb y está protegido por las leyes de propiedad intelectual.
+                    Todo el contenido de este sitio web, incluyendo texto, gráficos, logotipos e imágenes, es propiedad de CyberSkyWeb y está protegido por las leyes de propiedad intelectual.
                 </p>
                 <h2 className="text-2xl font-bold text-white mt-8 mb-4">3. Limitación de Responsabilidad</h2>
                 <p>
-                    SkyCyberWeb no será responsable de ningún daño directo, indirecto, incidental, consecuente o punitivo que surja del uso o la imposibilidad de uso de este sitio.
+                    CyberSkyWeb no será responsable de ningún daño directo, indirecto, incidental, consecuente o punitivo que surja del uso o la imposibilidad de uso de este sitio.
                 </p>
             </div>
         </div>

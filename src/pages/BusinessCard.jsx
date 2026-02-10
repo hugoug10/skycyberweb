@@ -4,7 +4,7 @@ import { Rocket, Globe, Mail, Phone, MapPin, Video, Layout, Search, ShoppingCart
 const BusinessCard = () => {
     return (
         <div className="min-h-screen bg-neutral-900 flex flex-col items-center justify-center p-8 gap-16 font-sans">
-            <h1 className="text-3xl font-bold text-white mb-4">Diseño Premium SkyCyberWeb</h1>
+            <h1 className="text-3xl font-bold text-white mb-4">Diseño Premium CyberSkyWeb</h1>
 
             {/* FRONT SIDE */}
             <div className="relative w-[500px] h-[300px] rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(0,243,255,0.15)] group transition-transform hover:scale-105 duration-500">
@@ -33,7 +33,7 @@ const BusinessCard = () => {
                     <div className="flex items-center gap-4 mb-2 md:scale-125 transform">
                         <div className="relative">
                             <div className="absolute inset-0 bg-neon-cyan blur-md opacity-50"></div>
-                            <img src="/favicon.svg" alt="SkyCyberWeb" className="w-20 h-20 relative z-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
+                            <img src="/favicon.svg" alt="CyberSkyWeb" className="w-20 h-20 relative z-10 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
                         </div>
                     </div>
 
