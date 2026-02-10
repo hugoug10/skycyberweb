@@ -72,22 +72,28 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-dark-card border-b border-white/10"
+                        className="md:hidden bg-dark-bg/95 backdrop-blur-xl border-b border-white/10"
                     >
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        <div className="px-4 pt-2 pb-6 space-y-2">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.path}
-                                    className={`${isActive(link.path)} block px-3 py-2 rounded-md text-base font-medium`}
+                                    className={`${isActive(link.path)} block px-4 py-3 rounded-xl text-lg font-medium bg-white/5 border border-white/5 active:bg-white/10 transition-colors`}
                                     onClick={() => setIsOpen(false)}
                                 >
                                     {link.name}
                                 </Link>
                             ))}
-                            <Link to="/contacto" className="w-full text-center mt-4 bg-neon-cyan text-black font-bold px-6 py-2 rounded-full block" onClick={() => setIsOpen(false)}>
-                                Empezar
-                            </Link>
+                            <div className="pt-4">
+                                <Link
+                                    to="/contacto"
+                                    className="w-full text-center bg-neon-cyan text-black font-black py-4 rounded-full block shadow-[0_0_20px_rgba(0,243,255,0.3)]"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    EMPEZAR AHORA
+                                </Link>
+                            </div>
                         </div>
                     </motion.div>
                 )}

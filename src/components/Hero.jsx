@@ -24,31 +24,31 @@ const Hero = () => {
                         <span className="text-gray-300 text-sm font-medium tracking-wide">CYBERSKYWEB.COM</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-white mb-6 leading-tight">
+                    <h1 className="text-4xl md:text-8xl font-black tracking-tighter text-white mb-6 leading-tight">
                         ELEVAMOS TU <br />
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-neon-cyan via-white to-neon-purple animate-gradient-x">
                             PRESENCIA DIGITAL
                         </span>
                     </h1>
 
-                    <p className="max-w-2xl mx-auto text-xl text-gray-400 mb-10 leading-relaxed">
+                    <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-10 leading-relaxed px-4 md:px-0">
                         Creamos experiencias web inmersivas y de alto rendimiento que no solo se ven increíbles, sino que convierten visitantes en clientes.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link to="/contacto" className="group relative px-8 py-4 bg-neon-cyan text-black font-bold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(0,243,255,0.4)]">
-                            <span className="relative z-10 flex items-center gap-2">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-6 md:px-0">
+                        <Link to="/contacto" className="w-full sm:w-auto group relative px-8 py-4 bg-neon-cyan text-black font-bold rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(0,243,255,0.4)]">
+                            <span className="relative z-10 flex items-center justify-center gap-2">
                                 INICIAR PROYECTO <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
                         </Link>
-                        <Link to="/portfolio" className="px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-full hover:bg-white/5 transition-all backdrop-blur-sm">
+                        <Link to="/portfolio" className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/20 text-white font-medium rounded-full hover:bg-white/5 transition-all backdrop-blur-sm shadow-lg">
                             VER PROYECTOS
                         </Link>
                     </div>
                 </motion.div>
 
                 {/* Stats / Features - Floating */}
-                <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="mt-12 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto px-4 md:px-0">
                     {[
                         { icon: Globe, text: "Experiencias Inmersivas", color: "text-neon-cyan" },
                         { icon: Zap, text: "Ultra Rendimiento", color: "text-neon-purple" },
@@ -68,11 +68,11 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
+            {/* Scroll Indicator - Hidden on mobile */}
             <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500"
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-500 hidden md:block"
             >
                 <div className="w-6 h-10 border-2 border-gray-500 rounded-full flex justify-center p-1">
                     <div className="w-1 h-2 bg-gray-500 rounded-full animate-bounce"></div>

@@ -29,12 +29,12 @@ const Home = () => {
             </div>
 
             {/* CTA for Contact */}
-            <section className="py-20 bg-gradient-to-br from-neon-blue/10 to-dark-bg text-center">
-                <div className="max-w-4xl mx-auto px-4">
-                    <h2 className="text-4xl font-bold mb-6 text-white">¿Listo para hacer historia?</h2>
-                    <p className="text-gray-300 mb-8 text-lg">Tu proyecto merece ser visto por el mundo con la mejor calidad.</p>
-                    <Link to="/contacto" className="inline-block px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-neon-cyan transition-colors">
-                        Contáctanos ahora
+            <section className="py-20 bg-gradient-to-br from-neon-blue/10 to-dark-bg text-center px-4">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">¿Listo para hacer historia?</h2>
+                    <p className="text-gray-300 mb-8 text-base md:text-lg">Tu proyecto merece ser visto por el mundo con la mejor calidad.</p>
+                    <Link to="/contacto" className="w-full sm:w-auto inline-block px-8 py-4 bg-white text-black font-black rounded-full hover:bg-neon-cyan transition-colors shadow-xl">
+                        CONTÁCTANOS AHORA
                     </Link>
                 </div>
             </section>

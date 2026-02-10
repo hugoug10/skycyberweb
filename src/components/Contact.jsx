@@ -24,11 +24,11 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6">
                             ¿LISTO PARA <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">EL FUTURO?</span>
                         </h2>
-                        <p className="text-gray-400 text-lg mb-10 leading-relaxed">
+                        <p className="text-gray-400 text-base md:text-lg mb-10 leading-relaxed">
                             No dejes que tu marca se quede atrás. Contáctanos hoy y comencemos a construir tu presencia digital de alto impacto.
                         </p>
 
@@ -69,7 +69,7 @@ const Contact = () => {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-dark-card p-8 rounded-3xl border border-white/10 shadow-2xl"
+                        className="bg-dark-card p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl"
                     >
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
