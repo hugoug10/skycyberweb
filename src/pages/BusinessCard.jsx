@@ -56,76 +56,78 @@ const BusinessCard = () => {
             </div>
 
             {/* BACK SIDE */}
-            <div className="relative w-[500px] h-[300px] rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(189,0,255,0.15)] group transition-transform hover:scale-105 duration-500">
-                {/* Background */}
-                <div className="absolute inset-0 bg-[#080808]"></div>
+            <div className="relative w-[500px] h-[300px] bg-white shadow-[0_0_80px_rgba(189,0,255,0.15)] group transition-transform hover:scale-105 duration-500 p-4 rounded-xl">
+                <div className="relative w-full h-full rounded-lg overflow-hidden">
+                    {/* Background */}
+                    <div className="absolute inset-0 bg-[#080808]"></div>
 
-                {/* Cyber Lines */}
-                <div className="absolute top-0 w-full h-1 bg-gradient-to-r from-neon-cyan via-purple-500 to-neon-cyan"></div>
+                    {/* Cyber Lines */}
+                    <div className="absolute top-0 w-full h-1 bg-gradient-to-r from-neon-cyan via-purple-500 to-neon-cyan"></div>
 
-                <div className="relative z-10 h-full p-8 flex gap-8">
-                    {/* QR Code Section (Left) */}
-                    <div className="w-1/3 flex flex-col justify-between border-r border-white/10 pr-6">
-                        <div className="aspect-square bg-white p-2 rounded-lg mb-2 relative overflow-hidden">
-                            {/* Real QR */}
-                            <img
-                                src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://cyberskyweb.com"
-                                alt="QR Code"
-                                className="w-full h-full object-contain"
-                            />
-                            {/* Scan Me Overlay */}
-                            <div className="absolute bottom-1 right-1 bg-neon-cyan text-black text-[8px] font-bold px-1 rounded">SCAN ME</div>
-                        </div>
-                        <div className="text-center">
-                            <h3 className="text-white font-bold text-lg leading-none">HUGO</h3>
-                            <p className="text-neon-purple text-xs font-mono">CEO & Founder</p>
-                        </div>
-                    </div>
-
-                    {/* Info Section (Right) */}
-                    <div className="w-2/3 flex flex-col justify-between py-1">
-
-                        {/* Services List */}
-                        <div>
-                            <h4 className="text-[10px] text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                <Cpu size={10} /> Capacidades del Sistema
-                            </h4>
-                            <ul className="space-y-2">
-                                <li className="flex items-center gap-2 text-sm text-gray-300">
-                                    <span className="w-1.5 h-1.5 bg-neon-cyan rounded-full shadow-[0_0_5px_#00f3ff]"></span>
-                                    Desarrollo Web High-End
-                                </li>
-                                <li className="flex items-center gap-2 text-sm text-gray-300">
-                                    <span className="w-1.5 h-1.5 bg-neon-purple rounded-full shadow-[0_0_5px_#bd00ff]"></span>
-                                    Branding & Identidad Digital
-                                </li>
-                                <li className="flex items-center gap-2 text-sm text-gray-300">
-                                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full shadow-[0_0_5px_orange]"></span>
-                                    <span className="font-bold text-white">Videografía Dron 4K</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Contact Data */}
-                        <div className="space-y-2 mt-4 bg-white/5 p-4 rounded-lg border border-white/5">
-                            <div className="flex items-center gap-3 text-sm text-gray-300">
-                                <Mail size={14} className="text-neon-cyan" />
-                                <span>hugoug10.fly@gmail.com</span>
+                    <div className="relative z-10 h-full p-8 flex gap-8">
+                        {/* QR Code Section (Left) */}
+                        <div className="w-1/3 flex flex-col justify-between border-r border-white/10 pr-6">
+                            <div className="aspect-square bg-white p-2 rounded-lg mb-2 relative overflow-hidden">
+                                {/* Real QR */}
+                                <img
+                                    src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://cyberskyweb.com"
+                                    alt="QR Code"
+                                    className="w-full h-full object-contain"
+                                />
+                                {/* Scan Me Overlay */}
+                                <div className="absolute bottom-1 right-1 bg-neon-cyan text-black text-[8px] font-bold px-1 rounded">SCAN ME</div>
                             </div>
-                            <div className="flex items-center gap-3 text-sm text-gray-300">
-                                <Phone size={14} className="text-neon-cyan" />
-                                <span>+34 615 65 55 93</span>
+                            <div className="text-center">
+                                <h3 className="text-white font-bold text-lg leading-none">HUGO</h3>
+                                <p className="text-neon-purple text-xs font-mono">CEO & Founder</p>
                             </div>
                         </div>
 
-                    </div>
-                </div>
+                        {/* Info Section (Right) */}
+                        <div className="w-2/3 flex flex-col justify-between py-1">
 
-                {/* Decorative Bottom Bar */}
-                <div className="absolute bottom-0 w-full h-2 bg-gradient-to-r from-transparent via-white/10 to-transparent flex justify-center items-center gap-1">
-                    <div className="w-1 h-1 rounded-full bg-white/30"></div>
-                    <div className="w-1 h-1 rounded-full bg-white/30"></div>
-                    <div className="w-1 h-1 rounded-full bg-white/30"></div>
+                            {/* Services List */}
+                            <div>
+                                <h4 className="text-[10px] text-gray-500 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                    <Cpu size={10} /> Capacidades del Sistema
+                                </h4>
+                                <ul className="space-y-2">
+                                    <li className="flex items-center gap-2 text-sm text-gray-300">
+                                        <span className="w-1.5 h-1.5 bg-neon-cyan rounded-full shadow-[0_0_5px_#00f3ff]"></span>
+                                        Desarrollo Web High-End
+                                    </li>
+                                    <li className="flex items-center gap-2 text-sm text-gray-300">
+                                        <span className="w-1.5 h-1.5 bg-neon-purple rounded-full shadow-[0_0_5px_#bd00ff]"></span>
+                                        Branding & Identidad Digital
+                                    </li>
+                                    <li className="flex items-center gap-2 text-sm text-gray-300">
+                                        <span className="w-1.5 h-1.5 bg-orange-500 rounded-full shadow-[0_0_5px_orange]"></span>
+                                        <span className="font-bold text-white">Videografía Dron 4K</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {/* Contact Data */}
+                            <div className="space-y-2 mt-4 bg-white/5 p-4 rounded-lg border border-white/5">
+                                <div className="flex items-center gap-3 text-sm text-gray-300">
+                                    <Mail size={14} className="text-neon-cyan" />
+                                    <span>hugoug10.fly@gmail.com</span>
+                                </div>
+                                <div className="flex items-center gap-3 text-sm text-gray-300">
+                                    <Phone size={14} className="text-neon-cyan" />
+                                    <span>+34 615 65 55 93</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {/* Decorative Bottom Bar */}
+                    <div className="absolute bottom-0 w-full h-2 bg-gradient-to-r from-transparent via-white/10 to-transparent flex justify-center items-center gap-1">
+                        <div className="w-1 h-1 rounded-full bg-white/30"></div>
+                        <div className="w-1 h-1 rounded-full bg-white/30"></div>
+                        <div className="w-1 h-1 rounded-full bg-white/30"></div>
+                    </div>
                 </div>
             </div>
         </div>
