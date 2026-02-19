@@ -140,7 +140,7 @@ const BusinessCard = () => {
                                     <div className="space-y-2 mt-4 bg-white/5 p-4 rounded-lg border border-white/5">
                                         <div className="flex items-center gap-3 text-sm text-gray-300">
                                             <Mail size={14} className="text-neon-cyan" />
-                                            <span>hugoug10.fly@gmail.com</span>
+                                            <span>contact.dronyxair@gmail.com</span>
                                         </div>
                                         <div className="flex items-center gap-3 text-sm text-gray-300">
                                             <Phone size={14} className="text-neon-cyan" />

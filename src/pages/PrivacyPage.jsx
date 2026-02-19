@@ -26,7 +26,7 @@ const PrivacyPage = () => {
                 </p>
                 <h2 className="text-2xl font-bold text-white mt-8 mb-4">3. Contacto</h2>
                 <p>
-                    Si tiene alguna duda, puede escribirnos directamente a <a href="mailto:hugoug10.fly@gmail.com" className="text-neon-cyan hover:underline">hugoug10.fly@gmail.com</a>.
+                    Si tiene alguna duda, puede escribirnos directamente a <a href="mailto:contact.dronyxair@gmail.com" className="text-neon-cyan hover:underline">contact.dronyxair@gmail.com</a>.
                 </p>
             </div>
         </div>

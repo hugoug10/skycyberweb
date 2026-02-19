@@ -20,7 +20,7 @@ const Navbar = () => {
         { name: 'Inicio', path: '/' },
         { name: 'Servicios', path: '/servicios' },
         { name: 'Proyectos', path: '/portfolio' },
-        { name: 'Contacto', path: '/contacto' },
+        { name: 'Nosotros', path: '/nosotros' },
     ];
 
     const isActive = (path) => {
@@ -49,7 +49,7 @@ const Navbar = () => {
                                     {link.name}
                                 </Link>
                             ))}
-                            <Link to="/contacto" className="bg-neon-cyan text-black font-bold px-6 py-2 rounded-full hover:shadow-[0_0_20px_rgba(0,243,255,0.5)] transition-all duration-300 transform hover:scale-105">
+                            <Link to="/empezar" className="bg-neon-cyan text-black font-bold px-6 py-2 rounded-full hover:shadow-[0_0_20px_rgba(0,243,255,0.5)] transition-all duration-300 transform hover:scale-105">
                                 Empezar
                             </Link>
                         </div>
@@ -87,8 +87,8 @@ const Navbar = () => {
                             ))}
                             <div className="pt-4">
                                 <Link
-                                    to="/contacto"
-                                    className="w-full text-center bg-neon-cyan text-black font-black py-4 rounded-full block shadow-[0_0_20px_rgba(0,243,255,0.3)]"
+                                    to="/empezar"
+                                    className="w-full text-center bg-neon-cyan text-black font-bold py-3.5 rounded-full block shadow-[0_0_20px_rgba(0,243,255,0.3)]"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     EMPEZAR AHORA

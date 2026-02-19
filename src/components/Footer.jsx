@@ -23,10 +23,10 @@ const Footer = () => {
                         <h3 className="text-white font-bold mb-4">Servicios</h3>
                         <ul className="space-y-2 text-gray-400 text-sm">
                             <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/servicios">Diseño Web UI/UX</Link></li>
-                            <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/servicios">Desarrollo Frontend</Link></li>
-                            <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/servicios">E-commerce</Link></li>
-                            <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/servicios">SEO & Performance</Link></li>
-                            <li className="hover:text-orange-500 cursor-pointer transition-colors font-semibold"><Link to="/servicios">Dron Profesional</Link></li>
+                            <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/servicios">Desarrollo Full-Stack</Link></li>
+                            <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/servicios">Mantenimiento & Seguridad</Link></li>
+                            <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/servicios">Consultoría Digital</Link></li>
+                            <li className="hover:text-yellow-400 cursor-pointer transition-colors font-bold"><Link to="/servicios">Videografía Aérea</Link></li>
                         </ul>
                     </div>
 
@@ -34,8 +34,9 @@ const Footer = () => {
                         <h3 className="text-white font-bold mb-4">Empresa</h3>
                         <ul className="space-y-2 text-gray-400 text-sm">
                             <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/">Inicio</Link></li>
+                            <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/nosotros">Nosotros</Link></li>
                             <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/portfolio">Proyectos</Link></li>
-                            <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/contacto">Contacto</Link></li>
+                            <li className="hover:text-neon-cyan cursor-pointer transition-colors"><Link to="/empezar">Contacto</Link></li>
                         </ul>
                     </div>
 

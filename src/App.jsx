@@ -1,14 +1,16 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ServicesPage from './pages/ServicesPage';
 import PortfolioPage from './pages/PortfolioPage';
-import ContactPage from './pages/ContactPage';
+import AboutPage from './pages/AboutPage';
+import StartProjectPage from './pages/StartProjectPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
 import BusinessCard from './pages/BusinessCard';
+import CookiePolicy from './pages/CookiePolicy';
+import CookieConsent from './components/CookieConsent';
 
 function App() {
   return (
@@ -20,13 +22,16 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/servicios" element={<ServicesPage />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/contacto" element={<ContactPage />} />
+            <Route path="/nosotros" element={<AboutPage />} />
+            <Route path="/empezar" element={<StartProjectPage />} />
             <Route path="/privacidad" element={<PrivacyPage />} />
             <Route path="/terminos" element={<TermsPage />} />
             <Route path="/tarjeta" element={<BusinessCard />} />
+            <Route path="/politica-de-cookies" element={<CookiePolicy />} />
           </Routes>
         </main>
         <Footer />
+        <CookieConsent />
       </div>
     </Router>
   );
