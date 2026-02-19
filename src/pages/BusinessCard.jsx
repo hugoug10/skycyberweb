@@ -61,7 +61,7 @@ const BusinessCard = () => {
                                     <div className="relative p-4">
                                         {/* Inner Glow */}
                                         <div className="absolute inset-0 bg-neon-cyan/20 blur-2xl rounded-full"></div>
-                                        <img src="/favicon.svg?v=3" alt="CyberSkyWeb" className="w-24 h-24 relative z-10 drop-shadow-[0_0_15px_rgba(0,243,255,0.5)]" />
+                                        <img src="/favicon.svg?v=3" alt="Cyber Sky Web" className="w-24 h-24 relative z-10 drop-shadow-[0_0_15px_rgba(0,243,255,0.5)]" />
                                     </div>
                                 </div>
 
