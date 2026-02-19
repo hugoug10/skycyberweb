@@ -132,7 +132,7 @@ const About = () => {
                                 Todo comenzó con una idea simple: <strong className="text-white">la web actual es aburrida</strong>. Webs estáticas, plantillas genéricas, falta de alma.
                             </p>
                             <p>
-                                En CyberSkyWeb, decidimos romper el molde. Nacimos para fusionar arte y tecnología. No hacemos sitios web; construimos universos digitales inmersivos que cuentan la historia de tu marca como nunca antes.
+                                En Cyber Sky Web, decidimos romper el molde. Nacimos para fusionar arte y tecnología. No hacemos sitios web; construimos universos digitales inmersivos que cuentan la historia de tu marca como nunca antes.
                             </p>
                             <p>
                                 Creemos en el poder del diseño neón, la interactividad fluida y la tecnología de vanguardia para diferenciar a nuestros clientes en un mar de mediocridad.

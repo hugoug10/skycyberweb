@@ -9,9 +9,9 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center gap-2 mb-4">
-                            <img src="/favicon.svg?v=3" alt="CyberSkyWeb Logo" className="h-8 w-8" />
+                            <img src="/favicon.svg?v=3" alt="Cyber Sky Web Logo" className="h-8 w-8" />
                             <span className="font-bold text-xl tracking-tighter text-white">
-                                CYBER<span className="text-neon-cyan">SKY</span>WEB
+                                CYBER<span className="text-neon-cyan"> SKY </span>WEB
                             </span>
                         </div>
                         <p className="text-gray-400 text-sm leading-relaxed">
@@ -81,7 +81,7 @@ const Footer = () => {
 
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-gray-500 text-sm">
-                        © {new Date().getFullYear()} CyberSkyWeb. Todos los derechos reservados.
+                        © {new Date().getFullYear()} Cyber Sky Web. Todos los derechos reservados.
                     </p>
                     <div className="flex space-x-6 mt-4 md:mt-0 text-gray-500 text-sm">
                         <Link to="/privacidad" className="hover:text-white transition-colors">Privacidad</Link>

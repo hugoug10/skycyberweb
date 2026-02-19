@@ -33,7 +33,7 @@ const SuccessModal = ({ isOpen, onClose }) => {
 
                             <h3 className="text-3xl font-black text-white mb-3">MENSAJE RECIBIDO</h3>
                             <p className="text-gray-300 mb-8 text-lg font-light leading-relaxed">
-                                Tu misión ha sido registrada en nuestra base de datos. Un agente de <span className="text-neon-cyan font-bold">Cyber Skye Web</span> contactará contigo en breve.
+                                Tu misión ha sido registrada en nuestra base de datos. Un agente de <span className="text-neon-cyan font-bold">Cyber Sky Web</span> contactará contigo en breve.
                             </p>
 
                             <button
@@ -75,7 +75,7 @@ const StartProject = () => {
                     name: formState.name,
                     email: formState.email,
                     message: formState.message,
-                    _subject: "🚀 Nuevo Proyecto: Cyber Skye Web",
+                    _subject: "🚀 Nuevo Proyecto: Cyber Sky Web",
                     _template: "box",
                     _captcha: "false"
                 })
