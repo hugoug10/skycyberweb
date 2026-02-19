@@ -11,7 +11,7 @@ const PrivacyPage = () => {
             <div className="space-y-6 text-gray-300">
                 <p>Última actualización: {new Date().toLocaleDateString()}</p>
                 <p>
-                    En CyberSkyWeb, valoramos su privacidad por encima de todo. Queremos ser completamente transparentes: <strong>no recopilamos, almacenamos ni procesamos ningún tipo de dato personal</strong> a través de este sitio web.
+                    En Cyber Sky Web, valoramos su privacidad por encima de todo. Queremos ser completamente transparentes: <strong>no recopilamos, almacenamos ni procesamos ningún tipo de dato personal</strong> a través de este sitio web.
                 </p>
                 <h2 className="text-2xl font-bold text-white mt-8 mb-4">1. Recopilación Limitada</h2>
                 <p>
