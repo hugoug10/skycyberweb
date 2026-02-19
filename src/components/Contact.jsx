@@ -63,7 +63,7 @@ const Contact = () => {
                     name: formState.name,
                     email: formState.email,
                     message: formState.message,
-                    _subject: `[MINIMAL] Contacto de ${formState.name}`,
+                    _subject: `[CyberSkyWeb] Contacto de ${formState.name}`,
                     _template: "table",
                     _captcha: "false"
                 })
