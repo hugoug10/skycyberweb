@@ -134,7 +134,7 @@ const Navbar = () => {
                                         <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-neon-cyan transition-colors">
                                             <Mail className="w-4 h-4" />
                                         </div>
-                                        <span className="text-sm font-medium">contact@cyberskyweb.com</span>
+                                        <span translate="no" className="text-sm font-medium notranslate">contact@cyberskyweb.com</span>
                                     </a>
                                     <a href="tel:+34615655593" className="group flex items-center gap-3 text-gray-400 hover:text-neon-cyan transition-colors w-max">
                                         <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-neon-cyan transition-colors">

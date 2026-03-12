@@ -116,7 +116,7 @@ const Contact = () => {
                         </p>
 
                         <div className="mt-12 flex flex-col gap-4 text-sm tracking-widest text-gray-500">
-                            <a href="mailto:contact@cyberskyweb.com" className="hover:text-neon-cyan transition-colors">
+                            <a href="mailto:contact@cyberskyweb.com" className="hover:text-neon-cyan transition-colors notranslate" translate="no">
                                 CONTACT@CYBERSKYWEB.COM
                             </a>
                             <a href="tel:+34615655593" className="hover:text-neon-cyan transition-colors">
