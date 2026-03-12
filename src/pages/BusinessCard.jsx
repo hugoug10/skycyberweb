@@ -17,7 +17,7 @@ const BusinessCard = () => {
 
     return (
         <div className="min-h-screen bg-neutral-900 flex flex-col items-center justify-center p-8 gap-8 font-sans">
-            <h1 className="text-3xl font-bold text-white mb-4">Diseño Premium Cyber Sky Web</h1>
+            <h1 className="text-3xl font-bold text-white mb-4">Diseño Premium <span translate="no" className="notranslate">Cyber Sky Web</span></h1>
 
             <div className="flex gap-4 mb-8">
                 <button onClick={() => downloadImage('card-front', 'tarjeta-frontal')} className="px-6 py-2 bg-neon-cyan text-black font-bold rounded-full hover:bg-white transition-colors flex items-center gap-2">
@@ -65,7 +65,7 @@ const BusinessCard = () => {
                                     </div>
                                 </div>
 
-                                <h2 className="text-4xl font-black italic tracking-tighter text-white mb-1 drop-shadow-lg">
+                                <h2 translate="no" className="notranslate text-4xl font-black italic tracking-tighter text-white mb-1 drop-shadow-lg">
                                     CYBER<span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">SKY</span>WEB
                                 </h2>
 
@@ -140,7 +140,7 @@ const BusinessCard = () => {
                                     <div className="space-y-2 mt-4 bg-white/5 p-4 rounded-lg border border-white/5">
                                         <div className="flex items-center gap-3 text-sm text-gray-300">
                                             <Mail size={14} className="text-neon-cyan" />
-                                            <span>contact.dronyxair@gmail.com</span>
+                                            <span>contact@cyberskyweb.com</span>
                                         </div>
                                         <div className="flex items-center gap-3 text-sm text-gray-300">
                                             <Phone size={14} className="text-neon-cyan" />

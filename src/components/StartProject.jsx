@@ -138,7 +138,7 @@ const StartProject = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                             {[
-                                { icon: Mail, title: "Email", value: "contact.dronyxair@gmail.com", href: "mailto:contact.dronyxair@gmail.com", color: "text-neon-cyan" },
+                                { icon: Mail, title: "Email", value: "contact@cyberskyweb.com", href: "mailto:contact@cyberskyweb.com", color: "text-neon-cyan" },
                                 { icon: Phone, title: "Teléfono", value: "+34 615 65 55 93", href: "tel:+34615655593", color: "text-neon-purple" }
                             ].map((item, index) => (
                                 <motion.a

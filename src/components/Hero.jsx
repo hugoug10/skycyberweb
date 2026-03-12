@@ -36,10 +36,10 @@ const Hero = () => {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-cyan opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-neon-cyan"></span>
                         </span>
-                        <span className="text-gray-300 text-xs md:text-sm font-mono tracking-widest uppercase">Cyber Sky Web Online</span>
+                        <span translate="no" className="notranslate text-gray-300 text-xs md:text-sm font-mono tracking-widest uppercase">Cyber Sky Web Online</span>
                     </div>
 
-                    <h1 className="text-6xl sm:text-7xl md:text-[9rem] font-black tracking-tighter text-white mb-2 leading-[0.85] select-none">
+                    <h1 translate="no" className="notranslate text-6xl sm:text-7xl md:text-[9rem] font-black tracking-tighter text-white mb-2 leading-[0.85] select-none">
                         <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 hover:text-white transition-colors duration-500" style={{ textShadow: '0 0 40px rgba(255,255,255,0.1)' }}>
                             CYBER
                         </span>
