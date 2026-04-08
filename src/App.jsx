@@ -11,11 +11,13 @@ import TermsPage from './pages/TermsPage';
 import BusinessCard from './pages/BusinessCard';
 import CookiePolicy from './pages/CookiePolicy';
 import CookieConsent from './components/CookieConsent';
+import ContentProtection from './components/ContentProtection';
 
 function App() {
   return (
     <Router>
       <div className="bg-[var(--color-dark-bg)] min-h-screen text-white font-sans selection:bg-[var(--color-neon-cyan)] selection:text-black flex flex-col">
+        <ContentProtection />
         <Navbar />
         <main className="flex-grow">
           <Routes>
