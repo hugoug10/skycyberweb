@@ -54,6 +54,7 @@ const StartProject = () => {
     const [formState, setFormState] = useState({
         name: '',
         email: '',
+        business: '',
         message: '',
         status: 'idle'
     });
@@ -74,6 +75,7 @@ const StartProject = () => {
                 body: JSON.stringify({
                     name: formState.name,
                     email: formState.email,
+                    business: formState.business,
                     message: formState.message,
                     _subject: "🚀 Nuevo Proyecto: Cyber Sky Web",
                     _template: "box",
@@ -92,7 +94,7 @@ const StartProject = () => {
     };
 
     const handleCloseModal = () => {
-        setFormState({ name: '', email: '', message: '', status: 'idle' });
+        setFormState({ name: '', email: '', business: '', message: '', status: 'idle' });
     };
 
     return (
@@ -193,11 +195,12 @@ const StartProject = () => {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <label className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-wider ml-1">Tu Email (Opcional)</label>
+                                    <label className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-wider ml-1">Tu Email</label>
                                     <div className="relative group">
                                         <input
                                             type="email"
                                             name="email"
+                                            required
                                             onFocus={() => setFocusedField('email')}
                                             onBlur={() => setFocusedField(null)}
                                             className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3 md:px-6 md:py-4 text-white placeholder-gray-600 focus:outline-none focus:border-neon-cyan/50 focus:bg-black/60 transition-all font-medium"
@@ -206,6 +209,24 @@ const StartProject = () => {
                                             onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                                         />
                                         <div className={`absolute bottom-0 left-0 h-[2px] bg-neon-cyan transition-all duration-300 ${focusedField === 'email' ? 'w-full' : 'w-0'}`}></div>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <label className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-wider ml-1">A qué se dedica tu negocio o marca</label>
+                                    <div className="relative group">
+                                        <input
+                                            type="text"
+                                            name="business"
+                                            required
+                                            onFocus={() => setFocusedField('business')}
+                                            onBlur={() => setFocusedField(null)}
+                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3 md:px-6 md:py-4 text-white placeholder-gray-600 focus:outline-none focus:border-neon-cyan/50 focus:bg-black/60 transition-all font-medium"
+                                            placeholder="Ej: Tienda de ropa, clínica dental, agencia inmobiliaria..."
+                                            value={formState.business}
+                                            onChange={(e) => setFormState({ ...formState, business: e.target.value })}
+                                        />
+                                        <div className={`absolute bottom-0 left-0 h-[2px] bg-neon-cyan transition-all duration-300 ${focusedField === 'business' ? 'w-full' : 'w-0'}`}></div>
                                     </div>
                                 </div>
 

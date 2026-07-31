@@ -47,6 +47,7 @@ const Contact = () => {
     const [formState, setFormState] = useState({
         name: '',
         email: '',
+        business: '',
         message: '',
         status: 'idle'
     });
@@ -62,6 +63,7 @@ const Contact = () => {
                 body: JSON.stringify({
                     name: formState.name,
                     email: formState.email,
+                    business: formState.business,
                     message: formState.message,
                     _subject: `[Cyber Sky Web] Contacto de ${formState.name}`,
                     _template: "table",
@@ -80,7 +82,7 @@ const Contact = () => {
     };
 
     const handleCloseModal = () => {
-        setFormState({ name: '', email: '', message: '', status: 'idle' });
+        setFormState({ name: '', email: '', business: '', message: '', status: 'idle' });
     };
 
     return (
@@ -164,6 +166,22 @@ const Contact = () => {
                             />
                             <label className="absolute left-0 top-4 text-2xl text-gray-500 transition-all peer-focus:-top-8 peer-focus:text-sm peer-focus:text-neon-cyan peer-not-placeholder-shown:-top-8 peer-not-placeholder-shown:text-sm peer-not-placeholder-shown:text-gray-400 pointer-events-none">
                                 TU EMAIL
+                            </label>
+                            <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-cyan transition-all duration-500 group-hover:w-full peer-focus:w-full"></div>
+                        </div>
+
+                        <div className="group relative">
+                            <input
+                                type="text"
+                                name="business"
+                                className="w-full bg-transparent border-b border-white/20 py-4 text-2xl text-white focus:outline-none focus:border-neon-cyan transition-all placeholder-transparent peer"
+                                placeholder="Tu negocio o marca"
+                                value={formState.business}
+                                onChange={(e) => setFormState({ ...formState, business: e.target.value })}
+                                disabled={formState.status === 'submitting'}
+                            />
+                            <label className="absolute left-0 top-4 text-2xl text-gray-500 transition-all peer-focus:-top-8 peer-focus:text-sm peer-focus:text-neon-cyan peer-not-placeholder-shown:-top-8 peer-not-placeholder-shown:text-sm peer-not-placeholder-shown:text-gray-400 pointer-events-none">
+                                ¿A QUÉ SE DEDICA TU NEGOCIO O MARCA?
                             </label>
                             <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-cyan transition-all duration-500 group-hover:w-full peer-focus:w-full"></div>
                         </div>
