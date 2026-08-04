@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Mail, Phone, MapPin, X, Check, ArrowRight, Zap, MessageSquare } from 'lucide-react';
+import { Send, Mail, Phone, MapPin, X, Check, ArrowRight, ArrowLeft, Zap, MessageSquare } from 'lucide-react';
 
 const SuccessModal = ({ isOpen, onClose }) => {
     return (
@@ -50,20 +50,63 @@ const SuccessModal = ({ isOpen, onClose }) => {
     );
 };
 
-const StartProject = () => {
-    const [formState, setFormState] = useState({
-        name: '',
-        email: '',
-        business: '',
-        message: '',
-        status: 'idle'
-    });
+const CONTACT_METHODS = [
+    { id: 'telefono', label: 'Teléfono', icon: Phone },
+    { id: 'correo', label: 'Correo', icon: Mail },
+    { id: 'whatsapp', label: 'WhatsApp', icon: MessageSquare },
+];
 
+const STEPS = ['name', 'contactMethod', 'contactValue', 'business', 'message'];
+
+const INITIAL_FORM_STATE = {
+    name: '',
+    contactMethod: '',
+    contactValue: '',
+    business: '',
+    message: '',
+    status: 'idle'
+};
+
+const StartProject = () => {
+    const [formState, setFormState] = useState(INITIAL_FORM_STATE);
+    const [step, setStep] = useState(0);
     const [focusedField, setFocusedField] = useState(null);
+
+    const currentStep = STEPS[step];
+    const isLastStep = step === STEPS.length - 1;
+
+    const isStepValid = () => {
+        switch (currentStep) {
+            case 'name':
+                return formState.name.trim().length > 0;
+            case 'contactMethod':
+                return formState.contactMethod !== '';
+            case 'contactValue':
+                return formState.contactValue.trim().length > 0;
+            case 'business':
+                return formState.business.trim().length > 0;
+            case 'message':
+                return formState.message.trim().length > 0;
+            default:
+                return false;
+        }
+    };
+
+    const handleNext = () => {
+        if (!isStepValid()) return;
+        setStep(prev => Math.min(prev + 1, STEPS.length - 1));
+    };
+
+    const handleBack = () => {
+        setStep(prev => Math.max(prev - 1, 0));
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!isStepValid()) return;
         setFormState(prev => ({ ...prev, status: 'submitting' }));
+
+        const contactMethodLabel = CONTACT_METHODS.find(m => m.id === formState.contactMethod)?.label || '';
 
         try {
             const response = await fetch("https://formsubmit.co/ajax/contact.dronyxair@gmail.com", {
@@ -74,7 +117,9 @@ const StartProject = () => {
                 },
                 body: JSON.stringify({
                     name: formState.name,
-                    email: formState.email,
+                    "Vía de contacto preferida": contactMethodLabel,
+                    "Dato de contacto": formState.contactValue,
+                    ...(formState.contactMethod === 'correo' ? { email: formState.contactValue } : {}),
                     business: formState.business,
                     message: formState.message,
                     _subject: "🚀 Nuevo Proyecto: Cyber Sky Web",
@@ -94,7 +139,112 @@ const StartProject = () => {
     };
 
     const handleCloseModal = () => {
-        setFormState({ name: '', email: '', business: '', message: '', status: 'idle' });
+        setFormState(INITIAL_FORM_STATE);
+        setStep(0);
+    };
+
+    const renderField = ({ name, label, type = 'text', placeholder, value, onChange, isTextarea = false }) => (
+        <div className="space-y-2">
+            <label className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-wider ml-1">{label}</label>
+            <div className="relative group">
+                {isTextarea ? (
+                    <textarea
+                        name={name}
+                        rows="3"
+                        autoFocus
+                        onFocus={() => setFocusedField(name)}
+                        onBlur={() => setFocusedField(null)}
+                        className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3 md:px-6 md:py-4 text-white placeholder-gray-600 focus:outline-none focus:border-neon-cyan/50 focus:bg-black/60 transition-all font-medium resize-none leading-relaxed"
+                        placeholder={placeholder}
+                        value={value}
+                        onChange={onChange}
+                    ></textarea>
+                ) : (
+                    <input
+                        type={type}
+                        name={name}
+                        autoFocus
+                        onFocus={() => setFocusedField(name)}
+                        onBlur={() => setFocusedField(null)}
+                        className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3 md:px-6 md:py-4 text-white placeholder-gray-600 focus:outline-none focus:border-neon-cyan/50 focus:bg-black/60 transition-all font-medium"
+                        placeholder={placeholder}
+                        value={value}
+                        onChange={onChange}
+                    />
+                )}
+                <div className={`absolute bottom-0 left-0 h-[2px] bg-neon-cyan transition-all duration-300 ${focusedField === name ? 'w-full' : 'w-0'}`}></div>
+            </div>
+        </div>
+    );
+
+    const renderStepContent = () => {
+        switch (currentStep) {
+            case 'name':
+                return renderField({
+                    name: 'name',
+                    label: 'Tu Nombre y Apellidos',
+                    placeholder: 'John Doe',
+                    value: formState.name,
+                    onChange: (e) => setFormState({ ...formState, name: e.target.value })
+                });
+
+            case 'contactMethod':
+                return (
+                    <div className="space-y-2">
+                        <label className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-wider ml-1">Vía de contacto preferida</label>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            {CONTACT_METHODS.map(({ id, label, icon: Icon }) => (
+                                <button
+                                    key={id}
+                                    type="button"
+                                    onClick={() => setFormState({ ...formState, contactMethod: id, contactValue: '' })}
+                                    className={`flex flex-col items-center justify-center gap-2 p-4 rounded-xl border transition-all font-bold ${formState.contactMethod === id
+                                        ? 'bg-neon-cyan/10 border-neon-cyan text-neon-cyan shadow-[0_0_15px_rgba(0,243,255,0.15)]'
+                                        : 'bg-black/40 border-white/10 text-gray-400 hover:border-white/30 hover:text-white'
+                                        }`}
+                                >
+                                    <Icon size={22} />
+                                    <span className="text-sm">{label}</span>
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                );
+
+            case 'contactValue': {
+                const isEmail = formState.contactMethod === 'correo';
+                return renderField({
+                    name: 'contactValue',
+                    label: isEmail ? 'Escribe tu correo electrónico' : 'Pon tu número de teléfono',
+                    type: isEmail ? 'email' : 'tel',
+                    placeholder: isEmail ? 'john@empresa.com' : '+34 600 000 000',
+                    value: formState.contactValue,
+                    onChange: (e) => setFormState({ ...formState, contactValue: e.target.value })
+                });
+            }
+
+            case 'business':
+                return renderField({
+                    name: 'business',
+                    label: 'A qué se dedica tu negocio o marca',
+                    placeholder: 'Ej: Tienda de ropa, clínica dental, agencia inmobiliaria...',
+                    value: formState.business,
+                    onChange: (e) => setFormState({ ...formState, business: e.target.value })
+                });
+
+            case 'message':
+                return renderField({
+                    name: 'message',
+                    label: 'Proyecto',
+                    placeholder: 'Cuéntanos tus objetivos...',
+                    value: formState.message,
+                    onChange: (e) => setFormState({ ...formState, message: e.target.value }),
+                    isTextarea: true
+                });
+
+            default:
+                return null;
+        }
     };
 
     return (
@@ -174,94 +324,72 @@ const StartProject = () => {
                         <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan to-neon-purple rounded-[2.5rem] blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
 
                         <div className="relative bg-dark-card border border-white/10 rounded-[2rem] p-6 md:p-10 shadow-2xl backdrop-blur-xl">
+
+                            {/* Progress dots */}
+                            <div className="flex items-center gap-2 mb-6 md:mb-8">
+                                {STEPS.map((_, index) => (
+                                    <div
+                                        key={index}
+                                        className={`h-1.5 rounded-full transition-all duration-300 ${index === step ? 'w-8 bg-neon-cyan' : index < step ? 'w-4 bg-neon-cyan/40' : 'w-4 bg-white/10'
+                                            }`}
+                                    ></div>
+                                ))}
+                            </div>
+
                             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-
-                                <div className="space-y-2">
-                                    <label className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-wider ml-1">Tu Nombre</label>
-                                    <div className="relative group">
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            required
-                                            onFocus={() => setFocusedField('name')}
-                                            onBlur={() => setFocusedField(null)}
-                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3 md:px-6 md:py-4 text-white placeholder-gray-600 focus:outline-none focus:border-neon-cyan/50 focus:bg-black/60 transition-all font-medium"
-                                            placeholder="John Doe"
-                                            value={formState.name}
-                                            onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                                        />
-                                        <div className={`absolute bottom-0 left-0 h-[2px] bg-neon-cyan transition-all duration-300 ${focusedField === 'name' ? 'w-full' : 'w-0'}`}></div>
-                                    </div>
+                                <div className="min-h-[110px] md:min-h-[120px]">
+                                    <AnimatePresence mode="wait">
+                                        <motion.div
+                                            key={step}
+                                            initial={{ opacity: 0, x: 20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            exit={{ opacity: 0, x: -20 }}
+                                            transition={{ duration: 0.25 }}
+                                        >
+                                            {renderStepContent()}
+                                        </motion.div>
+                                    </AnimatePresence>
                                 </div>
 
-                                <div className="space-y-2">
-                                    <label className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-wider ml-1">Tu Email</label>
-                                    <div className="relative group">
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            required
-                                            onFocus={() => setFocusedField('email')}
-                                            onBlur={() => setFocusedField(null)}
-                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3 md:px-6 md:py-4 text-white placeholder-gray-600 focus:outline-none focus:border-neon-cyan/50 focus:bg-black/60 transition-all font-medium"
-                                            placeholder="john@empresa.com"
-                                            value={formState.email}
-                                            onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                                        />
-                                        <div className={`absolute bottom-0 left-0 h-[2px] bg-neon-cyan transition-all duration-300 ${focusedField === 'email' ? 'w-full' : 'w-0'}`}></div>
-                                    </div>
-                                </div>
+                                <div className="pt-2 flex items-center gap-3">
+                                    {step > 0 && (
+                                        <button
+                                            type="button"
+                                            onClick={handleBack}
+                                            className="flex-shrink-0 w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full border border-white/10 text-gray-400 hover:text-white hover:border-white/30 transition-all"
+                                            aria-label="Atrás"
+                                        >
+                                            <ArrowLeft size={20} strokeWidth={3} />
+                                        </button>
+                                    )}
 
-                                <div className="space-y-2">
-                                    <label className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-wider ml-1">A qué se dedica tu negocio o marca</label>
-                                    <div className="relative group">
-                                        <input
-                                            type="text"
-                                            name="business"
-                                            required
-                                            onFocus={() => setFocusedField('business')}
-                                            onBlur={() => setFocusedField(null)}
-                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3 md:px-6 md:py-4 text-white placeholder-gray-600 focus:outline-none focus:border-neon-cyan/50 focus:bg-black/60 transition-all font-medium"
-                                            placeholder="Ej: Tienda de ropa, clínica dental, agencia inmobiliaria..."
-                                            value={formState.business}
-                                            onChange={(e) => setFormState({ ...formState, business: e.target.value })}
-                                        />
-                                        <div className={`absolute bottom-0 left-0 h-[2px] bg-neon-cyan transition-all duration-300 ${focusedField === 'business' ? 'w-full' : 'w-0'}`}></div>
-                                    </div>
+                                    {isLastStep ? (
+                                        <button
+                                            type="submit"
+                                            disabled={formState.status === 'submitting' || !isStepValid()}
+                                            className="flex-1 relative group overflow-hidden bg-white text-black font-black text-base md:text-lg py-4 md:py-5 rounded-full hover:scale-[1.02] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] disabled:opacity-50 disabled:hover:scale-100"
+                                        >
+                                            <span className="relative z-10 flex items-center justify-center gap-2">
+                                                {formState.status === 'submitting' ? 'ENVIANDO...' : 'INICIAR PROYECTO'}
+                                                {formState.status !== 'submitting' && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform md:w-5 md:h-5" strokeWidth={3} />}
+                                            </span>
+                                            <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                        </button>
+                                    ) : (
+                                        <button
+                                            type="button"
+                                            onClick={handleNext}
+                                            disabled={!isStepValid()}
+                                            className="flex-1 relative group overflow-hidden bg-white text-black font-black text-base md:text-lg py-4 md:py-5 rounded-full hover:scale-[1.02] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(0,243,255,0.4)] disabled:opacity-50 disabled:hover:scale-100"
+                                        >
+                                            <span className="relative z-10 flex items-center justify-center gap-2">
+                                                SIGUIENTE
+                                                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform md:w-5 md:h-5" strokeWidth={3} />
+                                            </span>
+                                            <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                        </button>
+                                    )}
                                 </div>
-
-                                <div className="space-y-2">
-                                    <label className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-wider ml-1">Proyecto</label>
-                                    <div className="relative group">
-                                        <textarea
-                                            name="message"
-                                            rows="3"
-                                            required
-                                            onFocus={() => setFocusedField('message')}
-                                            onBlur={() => setFocusedField(null)}
-                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-3 md:px-6 md:py-4 text-white placeholder-gray-600 focus:outline-none focus:border-neon-cyan/50 focus:bg-black/60 transition-all font-medium resize-none leading-relaxed"
-                                            placeholder="Cuéntanos tus objetivos..."
-                                            value={formState.message}
-                                            onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                                        ></textarea>
-                                        <div className={`absolute bottom-0 left-0 h-[2px] bg-neon-cyan transition-all duration-300 ${focusedField === 'message' ? 'w-full' : 'w-0'}`}></div>
-                                    </div>
-                                </div>
-
-                                <div className="pt-2">
-                                    <button
-                                        type="submit"
-                                        disabled={formState.status === 'submitting'}
-                                        className="w-full relative group overflow-hidden bg-white text-black font-black text-base md:text-lg py-4 md:py-5 rounded-full hover:scale-[1.02] transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(0,243,255,0.4)]"
-                                    >
-                                        <span className="relative z-10 flex items-center justify-center gap-2">
-                                            {formState.status === 'submitting' ? 'ENVIANDO...' : 'INICIAR PROYECTO'}
-                                            {!formState.status === 'submitting' && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform md:w-5 md:h-5" strokeWidth={3} />}
-                                        </span>
-                                        <div className="absolute inset-0 bg-gradient-to-r from-neon-cyan to-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                                    </button>
-                                </div>
-
                             </form>
                         </div>
                     </motion.div>
