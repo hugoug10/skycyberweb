@@ -101,6 +101,13 @@ const StartProject = () => {
         setStep(prev => Math.max(prev - 1, 0));
     };
 
+    const handleFormKeyDown = (e) => {
+        if (e.key === 'Enter' && e.target.tagName === 'INPUT') {
+            e.preventDefault();
+            handleNext();
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!isStepValid()) return;
@@ -336,7 +343,7 @@ const StartProject = () => {
                                 ))}
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                            <form onSubmit={handleSubmit} onKeyDown={handleFormKeyDown} className="space-y-4 md:space-y-6">
                                 <div className="min-h-[110px] md:min-h-[120px]">
                                     <AnimatePresence mode="wait">
                                         <motion.div
